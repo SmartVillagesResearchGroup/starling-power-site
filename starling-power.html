@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Starling Power — Commercial Solar in Tanzania</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #1a1a1a;
+      --mid: #555;
+      --muted: #888;
+      --border: #e5e5e5;
+      --bg: #fafafa;
+      --white: #ffffff;
+      --gold: #c9a84c;
+      --gold-light: #f0e6cc;
+      --section-pad: 80px 24px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    nav img.nav-logo {
+      height: 36px;
+      width: auto;
+    }
+
+    nav a {
+      font-size: 13px;
+      color: var(--mid);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--ink); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('Solar panel.jpeg') center/cover no-repeat;
+      filter: brightness(0.38);
+    }
+
+    .hero-content {
+      position: relative;
+      text-align: center;
+      padding: 120px 24px 80px;
+      max-width: 700px;
+    }
+
+    .hero-logo-wrap {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: #fff;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 36px;
+      box-shadow: 0 6px 32px rgba(0,0,0,0.45);
+      padding: 14px;
+    }
+
+    .hero-logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero h1 strong {
+      font-weight: 600;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.72);
+      max-width: 520px;
+      margin: 0 auto 40px;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      padding: 13px 32px;
+      background: var(--gold);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .hero-cta:hover {
+      background: #b8913e;
+      transform: translateY(-1px);
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: var(--section-pad);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+      line-height: 1.25;
+    }
+
+    h2 strong { font-weight: 600; }
+
+    .lead {
+      font-size: 1.1rem;
+      color: var(--mid);
+      max-width: 640px;
+      margin-bottom: 40px;
+    }
+
+    p {
+      color: var(--mid);
+      margin-bottom: 16px;
+      max-width: 680px;
+    }
+
+    /* ── ORIGIN SECTION ── */
+    .origin {
+      background: var(--bg);
+    }
+
+    .founders {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .founder-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 28px;
+    }
+
+    .founder-card .name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .founder-card .role {
+      font-size: 0.82rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── CAPABILITIES ── */
+    .capabilities {
+      background: var(--white);
+    }
+
+    .cap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 40px;
+    }
+
+    .cap-item {
+      background: var(--white);
+      padding: 28px 24px;
+    }
+
+    .cap-item .number {
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--gold);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .cap-item .label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .cap-item p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* ── PIPELINE ── */
+    .pipeline {
+      background: var(--bg);
+    }
+
+    .bullet-list {
+      list-style: none;
+      margin-top: 28px;
+    }
+
+    .bullet-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--mid);
+      font-size: 0.95rem;
+    }
+
+    .bullet-list li:last-child { border-bottom: none; }
+
+    .bullet-list li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      margin-top: 8px;
+    }
+
+    /* ── LEGAL ── */
+    .legal {
+      background: var(--white);
+    }
+
+    .legal-block {
+      border-left: 3px solid var(--gold);
+      padding: 20px 24px;
+      background: var(--gold-light);
+      border-radius: 0 4px 4px 0;
+      margin-top: 28px;
+      max-width: 560px;
+    }
+
+    .legal-block p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--ink);
+    }
+
+    /* ── CONTACT ── */
+    .contact {
+      background: #1a1a1a;
+      color: var(--white);
+      padding: 64px 24px;
+    }
+
+    .contact .container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .contact h2 {
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .contact p {
+      color: rgba(255,255,255,0.55);
+      margin: 0;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-link:hover { color: var(--gold); }
+
+    .contact-link .icon {
+      width: 32px;
+      height: 32px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #111;
+      padding: 32px 40px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer-note {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.03em;
+    }
+
+    .partner-logos {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .partner-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      white-space: nowrap;
+    }
+
+    .partner-logo-pill {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.92);
+      border-radius: 6px;
+      padding: 6px 12px;
+      height: 44px;
+      transition: background 0.2s;
+    }
+
+    .partner-logo-pill:hover { background: #fff; }
+
+    .partner-logo-pill img {
+      height: 26px;
+      width: auto;
+      max-width: 90px;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      nav { padding: 12px 20px; }
+      .founders { grid-template-columns: 1fr; }
+      footer { flex-direction: column; align-items: flex-start; }
+      .contact .container { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <img src="Starling Power logo.png" alt="Starling Power" class="nav-logo">
+  <a href="https://e4sv.org/" target="_blank" rel="noopener">Smart Villages &rarr;</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-logo-wrap">
+      <img src="Starling Power logo.png" alt="Starling Power" class="hero-logo">
+    </div>
+    <p class="hero-eyebrow">Arusha, Tanzania &middot; Est. 2025</p>
+    <h1><strong>Commercial Solar</strong><br>for Demanding Environments</h1>
+    <p>High-reliability solar and hybrid power systems for organisations that cannot afford downtime — built on over a decade of field-proven expertise.</p>
+    <a href="#about" class="hero-cta">Learn More</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="capabilities">
+  <div class="container">
+    <p class="section-label">About</p>
+    <h2><strong>A Tanzanian Company</strong><br>Built on Proven Expertise</h2>
+    <p class="lead">Starling Power is a newly established Tanzanian renewable energy company, created to deliver high-quality commercial solar solutions for organisations with demanding power requirements.</p>
+    <p>The company has spun out of more than a decade of applied research, system design, and field implementation led by Smart Villages, in close partnership with Tanzanian organisation OMASI. This work has been funded by the UK Government and international partners, and has delivered robust solar and hybrid energy systems across Sub-Saharan Africa and South-East Asia.</p>
+    <p>Starling Power has been formed to translate this proven technical expertise into a dedicated, locally registered commercial entity — capable of contracting, installing, operating, and maintaining large-scale solar systems in Tanzania.</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ORIGIN / FOUNDERS -->
+<section class="origin">
+  <div class="container">
+    <p class="section-label">Leadership</p>
+    <h2>Founded by the<br><strong>Managing Directors</strong></h2>
+    <p>Operating under Smart Villages and headquartered in Arusha, Starling Power was founded by the leaders of Smart Villages and OMASI.</p>
+
+    <div class="founders">
+      <div class="founder-card">
+        <div class="name">Dr Bernie Jones</div>
+        <div class="role">Managing Director, Smart Villages</div>
+      </div>
+      <div class="founder-card">
+        <div class="name">Osidai Saning'o</div>
+        <div class="role">Managing Director, OMASI</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CAPABILITIES -->
+<section class="capabilities">
+  <div class="container">
+    <p class="section-label">Capabilities</p>
+    <h2>What We<br><strong>Bring to the Table</strong></h2>
+
+    <div class="cap-grid">
+      <div class="cap-item">
+        <div class="number">9+</div>
+        <div class="label">Years of Experience</div>
+        <p>Designing and installing complex solar and hybrid systems in East Africa</p>
+      </div>
+      <div class="cap-item">
+        <div class="number">10–150</div>
+        <div class="label">kWp System Range</div>
+        <p>Scalable systems with battery storage, hybrid inverters, and remote monitoring</p>
+      </div>
+      <div class="cap-item">
+        <div class="number">Local</div>
+        <div class="label">Skilled Team</div>
+        <p>Trained Tanzanian technicians and engineers on the ground</p>
+      </div>
+      <div class="cap-item">
+        <div class="number">Multi</div>
+        <div class="label">Sector Experience</div>
+        <p>Broadcasting, agro-processing, water pumping, and community infrastructure</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PIPELINE -->
+<section class="pipeline">
+  <div class="container">
+    <p class="section-label">Projects</p>
+    <h2>Early Projects &amp;<br><strong>Growth Pipeline</strong></h2>
+    <p class="lead">Starling Power enters the market with active momentum. As of Q1 2026, the company has seven commercial solar installations in development — designed to offset large diesel gensets — with several additional projects under advanced negotiation.</p>
+    <p>All systems are being designed to meet international standards, prioritising:</p>
+
+    <ul class="bullet-list">
+      <li>Power continuity and redundancy</li>
+      <li>Long-term operational reliability</li>
+      <li>Reduced fuel costs and emissions</li>
+      <li>Practical operation and maintenance in remote environments</li>
+    </ul>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- LEGAL STATUS -->
+<section class="legal">
+  <div class="container">
+    <p class="section-label">Legal Status</p>
+    <h2>Fully Registered<br><strong>to Operate in Tanzania</strong></h2>
+
+    <div class="legal-block">
+      <p>Starling Power received its Certificate of Incorporation from the Business Registrations and Licensing Agency (BRELA) on <strong>15 May 2025</strong>, and is fully registered to operate in Tanzania.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div>
+      <h2>Get in <strong>Touch</strong></h2>
+      <p>For discussions regarding commercial solar installations,<br>hybrid power systems, or diesel displacement projects in Tanzania.</p>
+    </div>
+    <div class="contact-links">
+      <a href="tel:+255754988886" class="contact-link">
+        <span class="icon">&#9743;</span>
+        +255 754 988 886
+      </a>
+      <a href="https://e4sv.org/" target="_blank" rel="noopener" class="contact-link">
+        <span class="icon">&#9670;</span>
+        Visit Smart Villages
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-note">&copy; 2025 Starling Power Ltd &nbsp;&middot;&nbsp; Arusha, Tanzania</span>
+  <div class="partner-logos">
+    <span class="partner-label">In partnership with</span>
+    <a href="https://e4sv.org/" target="_blank" rel="noopener" title="Smart Villages" class="partner-logo-pill">
+      <img src="SV logo.jpg" alt="Smart Villages">
+    </a>
+    <div class="partner-logo-pill">
+      <img src="OMASI logo.png" alt="OMASI">
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
