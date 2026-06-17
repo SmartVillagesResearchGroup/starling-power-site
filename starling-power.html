@@ -48,6 +48,12 @@
       width: auto;
     }
 
+    nav .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
     nav a {
       font-size: 13px;
       color: var(--mid);
@@ -57,6 +63,19 @@
     }
 
     nav a:hover { color: var(--ink); }
+
+    /* ── GENERAL LINKS ── */
+    p a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    p a:hover {
+      color: #b8913e;
+      text-decoration: underline;
+    }
 
     /* ── HERO ── */
     .hero {
@@ -418,6 +437,7 @@
       padding: 6px 12px;
       height: 44px;
       transition: background 0.2s;
+      text-decoration: none;
     }
 
     .partner-logo-pill:hover { background: #fff; }
@@ -448,13 +468,14 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <img src="Starling Power logo.png" alt="Starling Power" class="nav-logo">
-  <a href="https://e4sv.org/" target="_blank" rel="noopener">Smart Villages &rarr;</a>
+  <div class="nav-links">
+    <a href="https://e4sv.org/" target="_blank" rel="noopener">Smart Villages &rarr;</a>
+    <a href="https://orkonerei.tz/" target="_blank" rel="noopener">OMASI &rarr;</a>
+  </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-content">
@@ -468,25 +489,23 @@
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about" class="capabilities">
   <div class="container">
     <p class="section-label">About</p>
     <h2><strong>A Tanzanian Company</strong><br>Built on Proven Expertise</h2>
     <p class="lead">Starling Power is a newly established Tanzanian renewable energy company, created to deliver high-quality commercial solar solutions for organisations with demanding power requirements.</p>
-    <p>The company has spun out of more than a decade of applied research, system design, and field implementation led by Smart Villages, in close partnership with Tanzanian organisation OMASI. This work has been funded by the UK Government and international partners, and has delivered robust solar and hybrid energy systems across Sub-Saharan Africa and South-East Asia.</p>
+    <p>The company has spun out of more than a decade of applied research, system design, and field implementation led by Smart Villages, in close partnership with Tanzanian organisation <a href="https://orkonerei.tz/" target="_blank" rel="noopener">OMASI</a>. This work has been funded by the UK Government and international partners, and has delivered robust solar and hybrid energy systems across Sub-Saharan Africa and South-East Asia.</p>
     <p>Starling Power has been formed to translate this proven technical expertise into a dedicated, locally registered commercial entity — capable of contracting, installing, operating, and maintaining large-scale solar systems in Tanzania.</p>
   </div>
 </section>
 
 <hr class="divider">
 
-<!-- ORIGIN / FOUNDERS -->
 <section class="origin">
   <div class="container">
     <p class="section-label">Leadership</p>
     <h2>Founded by the<br><strong>Managing Directors</strong></h2>
-    <p>Operating under Smart Villages and headquartered in Arusha, Starling Power was founded by the leaders of Smart Villages and OMASI.</p>
+    <p>Operating under the Smart Villages Group and headquartered in Arusha, Starling Power was founded by the leaders of Smart Villages and OMASI.</p>
 
     <div class="founders">
       <div class="founder-card">
@@ -503,7 +522,6 @@
 
 <hr class="divider">
 
-<!-- CAPABILITIES -->
 <section class="capabilities">
   <div class="container">
     <p class="section-label">Capabilities</p>
@@ -536,7 +554,6 @@
 
 <hr class="divider">
 
-<!-- PIPELINE -->
 <section class="pipeline">
   <div class="container">
     <p class="section-label">Projects</p>
@@ -555,7 +572,6 @@
 
 <hr class="divider">
 
-<!-- LEGAL STATUS -->
 <section class="legal">
   <div class="container">
     <p class="section-label">Legal Status</p>
@@ -567,7 +583,6 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="container">
     <div>
@@ -583,11 +598,14 @@
         <span class="icon">&#9670;</span>
         Visit Smart Villages
       </a>
+      <a href="https://orkonerei.tz/" target="_blank" rel="noopener" class="contact-link">
+        <span class="icon">&#9670;</span>
+        Visit OMASI
+      </a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <span class="footer-note">&copy; 2025 Starling Power Ltd &nbsp;&middot;&nbsp; Arusha, Tanzania</span>
   <div class="partner-logos">
@@ -595,9 +613,9 @@
     <a href="https://e4sv.org/" target="_blank" rel="noopener" title="Smart Villages" class="partner-logo-pill">
       <img src="SV logo.jpg" alt="Smart Villages">
     </a>
-    <div class="partner-logo-pill">
+    <a href="https://orkonerei.tz/" target="_blank" rel="noopener" title="OMASI" class="partner-logo-pill">
       <img src="OMASI logo.png" alt="OMASI">
-    </div>
+    </a>
   </div>
 </footer>
 
