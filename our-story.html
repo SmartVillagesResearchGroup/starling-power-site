@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Story | Starling Power Tanzania</title>
+  <meta name="description" content="How Starling Power grew out of more than a decade of solar research and field work in Tanzania, and the founders behind it: Dr Bernie Jones and Osidai Saning'o.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://starlingpowertz.com/our-story.html">
+  <meta name="geo.region" content="TZ-01">
+  <meta name="geo.placename" content="Arusha, Tanzania">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Starling Power">
+  <meta property="og:title" content="Our Story | Starling Power Tanzania">
+  <meta property="og:description" content="How Starling Power grew out of more than a decade of solar research and field work in Tanzania, and the founders behind it: Dr Bernie Jones and Osidai Saning'o.">
+  <meta property="og:url" content="https://starlingpowertz.com/our-story.html">
+  <meta property="og:image" content="https://starlingpowertz.com/Solar%20panel.jpeg">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="Starling Power logo.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <nav aria-label="Main navigation">
+    <a href="index.html" class="nav-brand" aria-label="Starling Power home">
+      <img src="Starling Power logo.png" alt="Starling Power logo">
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="our-work.html">Our Work</a></li>
+      <li><a href="our-story.html" aria-current="page">Our Story</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="nav-quote">Get a Quote</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-intro">
+    <div class="container">
+      <p class="section-label">Our story</p>
+      <h1>About <strong>Starling Power</strong></h1>
+      <p>A Tanzanian solar company founded in Arusha in 2025.</p>
+    </div>
+  </section>
+
+  <!-- ── OUR STORY ── -->
+  <section id="our-story" class="tint">
+    <div class="container">
+      <p class="section-label">Our story</p>
+      <h2>Where <strong>Starling Power</strong> Comes From</h2>
+
+      <img src="Bernie_and_Osidai.JPG" alt="Starling Power founders Dr Bernie Jones and Osidai Saning'o in Arusha, Tanzania" class="story-photo" loading="lazy">
+
+      <p class="lead">The company has spun out of more than a decade of applied research, system design, and field implementation led by <a href="https://e4sv.org/" target="_blank" rel="noopener">Smart Villages</a>, in close partnership with Tanzanian organisation <a href="https://orkonerei.tz/" target="_blank" rel="noopener">OMASI</a>. This work has been funded by the UK Government and international partners, and has delivered robust solar and hybrid energy systems across Sub-Saharan Africa and South-East Asia.</p>
+
+      <h3 style="margin-top:40px;">Our founders</h3>
+      <p>Operating under the Smart Villages Group and headquartered in Arusha, Starling Power was founded by the leaders of Smart Villages and OMASI.</p>
+
+      <div class="founders">
+        <div class="founder-card">
+          <div class="name">Dr Bernie Jones</div>
+          <div class="role">Co-founder, Starling Power</div>
+          <p>Bernie brings 30 years' experience to Starling Power.</p>
+        </div>
+        <div class="founder-card">
+          <div class="name">Osidai Saning'o</div>
+          <div class="role">Co-founder, Starling Power</div>
+          <p>Osidai brings 20 years' experience to Starling Power.</p>
+        </div>
+      </div>
+
+      <div class="partners">
+        <span class="partner-label">Our partners</span>
+        <a href="https://e4sv.org/" target="_blank" rel="noopener" title="Smart Villages" class="partner-logo-pill">
+          <img src="SV logo.jpg" alt="Smart Villages logo">
+        </a>
+        <a href="https://orkonerei.tz/" target="_blank" rel="noopener" title="OMASI" class="partner-logo-pill">
+          <img src="OMASI logo.png" alt="OMASI logo">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── QUOTE BAND ── -->
+  <section class="contact">
+    <div class="container">
+      <div>
+        <h2>Get a <strong>Solar Quote</strong></h2>
+        <p>Please get in touch to discuss your project needs: commercial solar, hybrid power, solar boreholes or diesel displacement anywhere in Tanzania.</p>
+      </div>
+      <div class="contact-actions">
+        <a href="tel:+255754988886" class="contact-phone">+255 754 988886</a>
+        <a href="contact.html" class="btn">Request a Quote</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span class="footer-note">&copy; 2026 Starling Power Ltd. Solar installers in Arusha, Tanzania.</span>
+  <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="solar-boreholes.html">Solar Boreholes</a></li>
+    <li><a href="our-work.html">Our Work</a></li>
+    <li><a href="our-story.html">Our Story</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  (function () {
+    var btn = document.querySelector('.nav-toggle');
+    var links = document.getElementById('nav-links');
+    btn.addEventListener('click', function () {
+      var open = links.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  })();
+</script>
+
+</body>
+</html>
