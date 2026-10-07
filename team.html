@@ -56,67 +56,93 @@
     <div class="container">
       <div class="team-grid">
         <div class="team-card">
-          <div class="avatar" aria-hidden="true">BJ</div>
+          <div class="avatar" data-photo="Bernie">
+            <span aria-hidden="true">BJ</span>
+          </div>
           <div class="name">Dr Bernie Jones</div>
           <div class="role">Co-founder and Managing Director</div>
         </div>
         <div class="team-card">
-          <div class="avatar" aria-hidden="true">OS</div>
+          <div class="avatar" data-photo="Osidai">
+            <span aria-hidden="true">OS</span>
+          </div>
           <div class="name">Osidai Saning'o</div>
           <div class="role">Co-founder and Managing Director</div>
         </div>
         <div class="team-card">
-          <div class="avatar" aria-hidden="true">LA</div>
+          <div class="avatar" data-photo="Laura">
+            <span aria-hidden="true">LA</span>
+          </div>
           <div class="name">Dr Laura Allerston</div>
           <div class="role">Commercial Director</div>
         </div>
         <div class="team-card">
-          <div class="avatar" aria-hidden="true">NW</div>
+          <div class="avatar" data-photo="Natasha">
+            <span aria-hidden="true">NW</span>
+          </div>
           <div class="name">Natasha Wilson</div>
           <div class="role">Head of Technology</div>
         </div>
         <div class="team-card">
-          <div class="avatar" aria-hidden="true">OR</div>
+          <div class="avatar" data-photo="Osian">
+            <span aria-hidden="true">OR</span>
+          </div>
           <div class="name">Osian Rees</div>
           <div class="role">Senior Technical Lead</div>
         </div>
         <div class="team-card">
-          <div class="avatar" aria-hidden="true">AG</div>
+          <div class="avatar" data-photo="Alice">
+            <span aria-hidden="true">AG</span>
+          </div>
           <div class="name">Alice Gwynne-Evans</div>
           <div class="role">Project and Business Development Manager</div>
         </div>
         <div class="team-card">
-          <div class="avatar" aria-hidden="true">CE</div>
+          <div class="avatar" data-photo="Charlotte">
+            <span aria-hidden="true">CE</span>
+          </div>
           <div class="name">Charlotte Evans</div>
           <div class="role">Project and Community Engagement Manager</div>
         </div>
         <div class="team-card">
-          <div class="avatar" aria-hidden="true">OM</div>
+          <div class="avatar" data-photo="Oshipai">
+            <span aria-hidden="true">OM</span>
+          </div>
           <div class="name">Oshipai Martin</div>
           <div class="role">Project Coordinator</div>
         </div>
         <div class="team-card">
-          <div class="avatar" aria-hidden="true">SL</div>
+          <div class="avatar" data-photo="Saruni">
+            <span aria-hidden="true">SL</span>
+          </div>
           <div class="name">Saruni Lucumay</div>
           <div class="role">Community Engagement Officer</div>
         </div>
         <div class="team-card">
-          <div class="avatar" aria-hidden="true">SS</div>
+          <div class="avatar" data-photo="Silas">
+            <span aria-hidden="true">SS</span>
+          </div>
           <div class="name">Silas Sifaeli</div>
           <div class="role">Project Technician</div>
         </div>
         <div class="team-card">
-          <div class="avatar" aria-hidden="true">LI</div>
+          <div class="avatar" data-photo="Leigh">
+            <span aria-hidden="true">LI</span>
+          </div>
           <div class="name">Leigh Ingram</div>
           <div class="role">Finance Manager</div>
         </div>
         <div class="team-card">
-          <div class="avatar" aria-hidden="true">SI</div>
+          <div class="avatar" data-photo="Sauda">
+            <span aria-hidden="true">SI</span>
+          </div>
           <div class="name">Sauda Isuja</div>
           <div class="role">Project Accountant</div>
         </div>
         <div class="team-card">
-          <div class="avatar" aria-hidden="true">AC</div>
+          <div class="avatar" data-photo="Anna">
+            <span aria-hidden="true">AC</span>
+          </div>
           <div class="name">Dr Anna Clements</div>
           <div class="role">Strategy Advisor</div>
         </div>
@@ -160,6 +186,26 @@
     btn.addEventListener('click', function () {
       var open = links.classList.toggle('open');
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  })();
+</script>
+
+<script>
+  // Team photos: files are named by first name (e.g. Bernie.jpg).
+  // Tries common extensions; keeps the initials if no photo is found.
+  (function () {
+    var exts = ['jpg', 'JPG', 'jpeg', 'JPEG', 'png', 'PNG', 'webp'];
+    document.querySelectorAll('.avatar[data-photo]').forEach(function (el) {
+      var first = el.getAttribute('data-photo');
+      var names = [first, first.toLowerCase(), first.toUpperCase()];
+      var tries = [];
+      names.forEach(function (n) { exts.forEach(function (e) { tries.push(n + '.' + e); }); });
+      var i = 0;
+      var img = new Image();
+      img.alt = el.parentNode.querySelector('.name').textContent;
+      img.onload = function () { el.innerHTML = ''; el.appendChild(img); el.classList.add('has-photo'); };
+      img.onerror = function () { i++; if (i < tries.length) img.src = encodeURI(tries[i]); };
+      img.src = encodeURI(tries[0]);
     });
   })();
 </script>
