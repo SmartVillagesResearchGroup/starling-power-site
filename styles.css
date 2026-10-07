@@ -580,3 +580,26 @@ footer {
 .spec-table thead th { font-weight: 600; color: var(--ink); background: var(--gold-light); }
 .spec-table tbody th { font-weight: 500; color: var(--ink); }
 .spec-table td { color: var(--mid); }
+
+/* ── TEAM ── */
+.team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 24px; }
+.team-card { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 28px 20px; text-align: center; }
+.team-card .avatar { width: 88px; height: 88px; border-radius: 50%; background: var(--gold-light); color: var(--gold-dark); font-size: 1.6rem; font-weight: 600; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+.team-card .name { font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+.team-card .role { font-size: 0.85rem; color: var(--muted); }
+
+/* ── QUOTES ── */
+.quote-card { margin: 0; background: var(--bg); border-radius: 4px; padding: 28px; }
+.quote-card blockquote { font-size: 1rem; color: var(--ink); line-height: 1.7; margin-bottom: 14px; font-style: italic; }
+.quote-card figcaption { font-size: 0.85rem; font-weight: 600; color: var(--gold-dark); }
+
+/* ── NAV BREAKPOINT (six tabs) ── */
+@media (max-width: 1100px) {
+  nav { padding: 0 20px; }
+  .nav-toggle { display: block; }
+  .nav-links { display: none; position: absolute; top: var(--nav-h); left: 0; right: 0; flex-direction: column; align-items: flex-start; gap: 0; background: var(--white); border-bottom: 1px solid var(--border); padding: 8px 20px 20px; }
+  .nav-links.open { display: flex; }
+  .nav-links li { width: 100%; }
+  .nav-links a { display: block; padding: 12px 0; font-size: 15px; }
+  .nav-links a.nav-quote { display: inline-block; margin-top: 10px; padding: 10px 18px; }
+}
